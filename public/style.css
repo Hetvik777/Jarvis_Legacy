@@ -256,3 +256,149 @@ height:250px;
 }
 
 }
+
+/* ===========================
+   ARC REACTOR v1.0
+=========================== */
+
+.reactor-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    position:relative;
+
+    height:420px;
+}
+
+.arc-reactor{
+    position:relative;
+
+    width:360px;
+    height:360px;
+}
+
+.outer-ring,
+.middle-ring,
+.inner-ring,
+.reactor-core{
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+}
+
+/* OUTER RING */
+
+.outer-ring{
+    width:360px;
+    height:360px;
+
+    border:3px solid #00eaff;
+
+    box-shadow:
+        0 0 20px #00eaff,
+        inset 0 0 20px #00eaff;
+
+    animation:
+        rotateClockwise 18s linear infinite;
+}
+
+/* MIDDLE RING */
+
+.middle-ring{
+    width:250px;
+    height:250px;
+
+    border:3px solid #00eaff;
+
+    box-shadow:
+        0 0 25px #00eaff;
+
+    animation:
+        rotateCounter 12s linear infinite;
+}
+
+/* INNER RING */
+
+.inner-ring{
+    width:150px;
+    height:150px;
+
+    border:3px solid #00eaff;
+
+    box-shadow:
+        0 0 30px #00eaff;
+
+    animation:
+        pulseRing 2s ease-in-out infinite;
+}
+
+/* CORE */
+
+.reactor-core{
+    width:80px;
+    height:80px;
+
+    background:#22f0ff;
+
+    box-shadow:
+        0 0 25px #22f0ff,
+        0 0 70px #22f0ff,
+        0 0 120px #22f0ff;
+
+    animation:
+        pulseCore 1.6s ease-in-out infinite;
+}
+
+/* ANIMATIONS */
+
+@keyframes rotateClockwise{
+
+    from{
+        transform:
+            translate(-50%,-50%)
+            rotate(0deg);
+    }
+
+    to{
+        transform:
+            translate(-50%,-50%)
+            rotate(360deg);
+    }
+}
+
+@keyframes rotateCounter{
+
+    from{
+        transform:
+            translate(-50%,-50%)
+            rotate(360deg);
+    }
+
+    to{
+        transform:
+            translate(-50%,-50%)
+            rotate(0deg);
+    }
+}
+
+@keyframes pulseCore{
+
+    50%{
+        transform:
+            translate(-50%,-50%)
+            scale(1.15);
+    }
+}
+
+@keyframes pulseRing{
+
+    50%{
+        opacity:.6;
+    }
+}
