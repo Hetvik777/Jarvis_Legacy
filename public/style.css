@@ -355,3 +355,80 @@ display:none;
         transform: translate(-50%, -50%) rotate(0deg);
     }
 }
+.radar-panel {
+    height: 260px;
+}
+
+.radar {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: 20px auto;
+    border: 2px solid cyan;
+    border-radius: 50%;
+}
+
+.radar-ring {
+    position: absolute;
+    border: 1px solid cyan;
+    border-radius: 50%;
+}
+
+.ring-a {
+    inset: 30px;
+}
+
+.ring-b {
+    inset: 60px;
+}
+
+.radar-line {
+    position: absolute;
+    width: 2px;
+    height: 90px;
+    background: cyan;
+    left: 89px;
+    top: 0;
+    transform-origin: bottom center;
+    animation: radarSweep 4s linear infinite;
+}
+
+.radar-center {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: cyan;
+    border-radius: 50%;
+    top: 85px;
+    left: 85px;
+}
+
+.radar-dot {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: cyan;
+    border-radius: 50%;
+}
+
+.dot-1 {
+    top: 45px;
+    left: 120px;
+}
+
+.dot-2 {
+    top: 120px;
+    left: 60px;
+}
+
+@keyframes radarSweep {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
