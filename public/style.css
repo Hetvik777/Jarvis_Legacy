@@ -108,42 +108,156 @@ align-items:center;
 }
 
 .reactor {
+
     position: relative;
-    width: 350px;
-    height: 350px;
+
+    width: 380px;
+
+    height: 380px;
+
     margin: 20px auto;
 }
 
-.ring {
+.reactor-lines {
+
     position: absolute;
-    border: 2px solid cyan;
+
+    width: 340px;
+
+    height: 340px;
+
+    top: 20px;
+
+    left: 20px;
+
     border-radius: 50%;
+
+    background:
+
+    repeating-conic-gradient(
+
+        transparent 0deg 8deg,
+
+        rgba(0,255,255,.8) 8deg 10deg
+
+    );
+
+    animation: rotate 20s linear infinite;
 }
 
-.ring1 {
-    inset: 0;
-    animation: spin 20s linear infinite;
-}
+.outer-ring,
+.middle-ring,
+.inner-ring {
 
-.ring2 {
-    inset: 50px;
-    animation: spinReverse 10s linear infinite;
-}
-
-.ring3 {
-    inset: 100px;
-    animation: spin 5s linear infinite;
-}
-
-.core {
     position: absolute;
-    width: 70px;
-    height: 70px;
-    top: 140px;
-    left: 140px;
+
     border-radius: 50%;
+
+    border: 3px solid cyan;
+}
+
+.outer-ring {
+
+    width: 380px;
+
+    height: 380px;
+
+    animation: rotate 12s linear infinite;
+
+    box-shadow:
+
+    0 0 20px cyan,
+
+    inset 0 0 20px cyan;
+}
+
+.middle-ring {
+
+    width: 260px;
+
+    height: 260px;
+
+    top: 60px;
+
+    left: 60px;
+
+    animation: rotateReverse 8s linear infinite;
+
+    box-shadow:
+
+    0 0 15px cyan,
+
+    inset 0 0 15px cyan;
+}
+
+.inner-ring {
+
+    width: 160px;
+
+    height: 160px;
+
+    top: 110px;
+
+    left: 110px;
+
+    animation: rotate 5s linear infinite;
+
+    box-shadow:
+
+    0 0 10px cyan,
+
+    inset 0 0 10px cyan;
+}
+
+.reactor-core {
+
+    position: absolute;
+
+    width: 90px;
+
+    height: 90px;
+
+    top: 145px;
+
+    left: 145px;
+
+    border-radius: 50%;
+
     background: cyan;
-    box-shadow: 0 0 80px cyan;
+
+    box-shadow:
+
+    0 0 40px cyan,
+
+    0 0 80px cyan,
+
+    0 0 120px cyan;
+}
+
+@keyframes rotate {
+
+    from {
+
+        transform: rotate(0deg);
+    }
+
+    to {
+
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateReverse {
+
+    from {
+
+        transform: rotate(360deg);
+    }
+
+    to {
+
+        transform: rotate(0deg);
+    }
 }
 
 @keyframes spin {
