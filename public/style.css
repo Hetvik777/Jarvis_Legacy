@@ -445,3 +445,40 @@ transform:scaleY(1.5);
 }
 
 }
+
+#output {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    font-family: monospace;
+
+    letter-spacing: 1px;
+
+    overflow: auto;
+
+    height: 100%;
+}
+
+#output div {
+
+    text-shadow: 0 0 10px cyan;
+
+    animation: fadeIn .5s;
+}
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+    }
+
+    to {
+
+        opacity: 1;
+    }
+}
