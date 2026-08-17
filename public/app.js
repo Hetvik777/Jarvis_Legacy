@@ -52,3 +52,33 @@ function typeMessage() {
 }
 
 setTimeout(typeMessage, 500);
+
+const input = document.getElementById("command");
+const button = document.getElementById("execute");
+
+button.addEventListener("click", runCommand);
+
+input.addEventListener("keypress", (event) => {
+    if (event.key === "Enter") {
+        runCommand();
+    }
+});
+
+function runCommand() {
+
+    const command = input.value.trim();
+
+    if (command === "") {
+        return;
+    }
+
+    const line = document.createElement("div");
+
+    line.textContent = "> " + command;
+
+    output.appendChild(line);
+
+    input.value = "";
+
+    output.scrollTop = output.scrollHeight;
+}
