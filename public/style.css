@@ -40,10 +40,12 @@ background-size:40px 40px;
 opacity:.3;
 }
 
-header{
+.reactor {
+    width: min(420px, 60vw);
 
-height:80px;
+    height: min(420px, 60vw);
 
+    
 display:flex;
 
 justify-content:space-between;
@@ -559,5 +561,22 @@ transform:scaleY(1.5);
     to {
 
         opacity: 1;
+    }
+}
+
+@media (max-width: 1200px) {
+
+    .reactor {
+        width: 320px;
+
+        height: 320px;
+    }
+
+    .console {
+        height: 180px;
+    }
+
+    main {
+        gap: 10px;
     }
 }
